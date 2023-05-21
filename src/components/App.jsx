@@ -1,8 +1,6 @@
 import ProfileCard from './ProfileCard';
 import profile from './user.json';
 
-
-
 export const App = () => {
   return (
     <div

@@ -1,6 +1,8 @@
 import React from "react";
+import defaulImage from '../images.png';
 
-export default function ProfileCard({ username, tag, location, avatar, stats }) {
+
+export default function ProfileCard({ username, tag, location, avatar = defaulImage, stats }) {
     return (
 <div class="profile">
   <div class="description">
