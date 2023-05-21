@@ -1,23 +1,12 @@
-import css from './FriendList.module.css'; 
-import cards from './friends.json';
+import css from './FriendList.module.css';
 
-// export default function FriendCard({ cards }) {
-//     return (
-//              {
-//                  cards.map((card) =>  {
-//                      return (
-//             //         <li
-//             //             key={card.id}
-//             //             className={css.item}
-//             //         >
-// //   <span class="status"></span>
-// //   <img class="avatar" src="" alt="User avatar" width="48" />
-// //   <p class="name">fff</p>
-//                     // </li>
-//                      );
-//                 }
-//         )
-//              } 
-
-
-// }
+export default function FriendCard({ avatar, name, isOnline}) {
+    return (
+   <li
+            className={css.item}
+          >
+             <span className={css.status} style={{ background: (isOnline? "green" : "red") }}></span>
+            <img src={avatar} alt="User avatar" className={css.avatar} />
+            <p className={css.name}>{name}</p>
+          </li > );
+}
