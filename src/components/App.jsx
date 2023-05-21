@@ -1,7 +1,8 @@
 import ProfileCard from './ProfileCard';
 import profile from './ProfileCard/user.json';
-import Statistik from './Statistik';
-import stat from './Statistik/stat.json';
+import { Statistics } from './Statistics/Statistics';
+import data from './Statistics/data.json';
+
 
 export const App = () => {
   return (
@@ -9,6 +10,7 @@ export const App = () => {
       style={{
         height: '100vh',
         display: 'flex',
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
@@ -21,9 +23,10 @@ export const App = () => {
         location={profile.location}
         avatar={profile.avatar}
         stats={profile.stats} />
-      <Statistik
-        title={stat.title}
-        stats={stat.stats} />
+      
+      <Statistics
+        title="Upload stats"
+        stats={data} />
     </div>
   );
 };
