@@ -1,5 +1,7 @@
 import ProfileCard from './ProfileCard';
-import profile from './user.json';
+import profile from './ProfileCard/user.json';
+import Statistik from './Statistik';
+import stat from './Statistik/stat.json';
 
 export const App = () => {
   return (
@@ -19,6 +21,9 @@ export const App = () => {
         location={profile.location}
         avatar={profile.avatar}
         stats={profile.stats} />
+      <Statistik
+        title={stat.title}
+        stats={stat.stats} />
     </div>
   );
 };
