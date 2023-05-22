@@ -1,4 +1,5 @@
 import css from './Statistics.module.css'; // стилізація компонента
+import PropTypes from 'prop-types'; 
 
 // функція для рандомного кольору статистики
 function getRandomHexColor() {
@@ -33,4 +34,19 @@ export const Statistics = ({ title, stats }) => {
       </ul>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+
+  // Перевірка, чи переданий параметр є масивом, і приймає PropTypes.shape в якості параметра.
+  stats: PropTypes.arrayOf(
+    // shape - визначає форму об'єкта, який передається у властивість
+    // і вимагає, щоб властивості цього об'єкта відповідали певній формі (типу даних)
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

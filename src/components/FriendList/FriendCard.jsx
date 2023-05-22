@@ -1,4 +1,5 @@
 import css from './FriendList.module.css';
+import PropTypes from 'prop-types';
 
 export default function FriendCard({ avatar, name, isOnline}) {
     return (
@@ -9,4 +10,10 @@ export default function FriendCard({ avatar, name, isOnline}) {
             <img src={avatar} alt="User avatar" className={css.avatar} />
             <p className={css.name}>{name}</p>
           </li > );
-}
+};
+
+FriendCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};

@@ -1,5 +1,6 @@
 import css from './FriendList.module.css';
 import FriendCard from './FriendCard';
+import PropTypes from 'prop-types'; 
 
 export default function FriendList({ cards }) {
     return (
@@ -16,4 +17,22 @@ export default function FriendList({ cards }) {
       })}
     </ul>
   );
-}
+};
+
+FriendList.propTypes = {
+
+  // Перевірка, чи переданий параметр є масивом,
+  // і приймає PropTypes.shape в якості параметра.
+  cards: PropTypes.arrayOf(
+
+  // shape - визначає форму об'єкта, який передається у властивість
+  // і вимагає, щоб властивості цього об'єкта відповідали певній формі (типу даних)
+
+  PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+  }).isRequired
+  ).isRequired,
+};
